@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心情播放室</title>
+  
+  <link rel="icon" href="data:,">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0d1b2a;
+      font-family: 'Noto Sans TC', sans-serif;
+      user-select: none;
+    }
+
+    /* 精美專輯卡片容器 */
+    #player-container {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(85vw, 360px);
+      z-index: 10;
+      display: none;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .album-cover {
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .song-title {
+      color: #fff8dc;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .yt-play-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #ff0000;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(255, 0, 0, 0.4);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .yt-play-btn:hover {
+      transform: scale(1.05);
+      background: #cc0000;
+    }
+
+    .yt-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+
+  <div id="player-container"></div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
